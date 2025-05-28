@@ -15,6 +15,7 @@ import lombok.Setter;
 public class FingerprintDataDTO {
     @NotNull
     private Long idPerson;
+    private String curp; // Debe estar este campo
 
     // Imágenes de huellas (base64, filePath, o null si está ausente)
     private String thumbLeft;

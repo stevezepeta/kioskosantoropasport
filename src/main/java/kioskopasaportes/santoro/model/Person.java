@@ -24,12 +24,14 @@ import lombok.Setter;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPerson;
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "id_person")  // <--- Esto es clave
+private Long idPerson;
 
- @Column(length = 225, nullable = false, unique = true)
-private String curp;
+    
 
+    @Column(length = 225, nullable = false, unique = true)
+    private String curp;
 
     @Column(length = 100, nullable = false)
     private String nombres;
@@ -63,4 +65,8 @@ private String curp;
 
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Pasaporte> pasaportes;
+    
+    @Column(length = 500)
+    private String facePhoto; 
+
 }

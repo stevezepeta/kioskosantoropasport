@@ -59,10 +59,11 @@ public class FingerPrint {
     private fingerStatus littleRightStatus;
     private String status;
     private LocalDateTime date;
+@ManyToOne
+@JoinColumn(name = "id_person", referencedColumnName = "id_person")
+private Person person;
 
-    @ManyToOne
-    @JoinColumn(name = "person_id", referencedColumnName = "idPerson")
-    private Person person;
+
 
     // @ManyToOne
     // @JoinColumn(name = "user_id_register")
