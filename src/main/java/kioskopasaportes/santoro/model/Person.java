@@ -27,8 +27,9 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPerson;
 
-    @Column(length = 18, nullable = false, unique = true)
-    private String curp;
+ @Column(length = 225, nullable = false, unique = true)
+private String curp;
+
 
     @Column(length = 100, nullable = false)
     private String nombres;
