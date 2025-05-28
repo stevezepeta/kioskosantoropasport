@@ -1,0 +1,1159 @@
+[
+  {
+    "id": 1,
+    "nombre": "AGUASCALIENTES",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "AGUASCALIENTES",
+        "direccion": "Av. Las Americas 1701, El Dorado 1ra Secc, C.P. 20235, Aguascalientes, Ags.",
+        "telefono": "449 146 9950",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "CALVILLO",
+        "direccion": "Calle Independencia 602A, Los Ángeles, C.P. 20800, Calvillo, Ags.",
+        "telefono": "495 956 0039",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "BAJA CALIFORNIA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "MEXICALI",
+        "direccion": "Calle México 161, lotes 20 y 21, manzana 35 de la primera sección, colonia centro, C.P. 21000, Mexicali, B.C.",
+        "telefono": "686 552 4819",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "TECATE"
+      },
+      {
+        "id": 3,
+        "nombre": "TIJUANA",
+        "direccion": "Avenida, Paseo de los Héroes 9111, 1er piso, Zona Centro, Ref. Pavilion Plaza Tijuana",
+        "telefono": "664 215 9950",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "BAJA CALIFORNIA SUR",
+    "oficinas": [
+
+      {
+        "id": 1,
+        "nombre": "LA PAZ",
+        "direccion": "Calle Ignacio Ramírez 3035, Esq. Calle Sonora, Col. Pueblo Nuevo, C.P. 23060 La Paz, B.C.S.",
+        "telefono": "612 129 4990",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "CAMPECHE",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "CAMPECHE",
+        "direccion": "Avenida 16 de Septiembre S/N, 1er Piso, Col. Centro, C.P. 24000 San Francisco, Campeche.",
+        "telefono": "981 811 3524",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "CARMEN",
+        "direccion": "Calle 20 x 31, Colonia Centro, C.P. 24100, Cd. Del Carmen, Campeche.",
+        "telefono": "938 384 1869",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "COAHUILA DE ZARAGOZA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "ABASOLO"
+      },
+      {
+        "id": 2,
+        "nombre": "ACUÑA",
+        "direccion": "Calle matamoros, esquina con Calle Reforma no. 660a, zona centro, C.P. 26200, Acuña, Coahuila.",
+        "telefono": "877 772 8834",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "MONCLOVA",
+        "direccion": "Boulevard Harold R Pape, Esq., Blvd. Francisco I. Madero (anexo Canaco) Col. Guadalupe,  C.P. 25700, Monclova, Coah.",
+        "telefono": "866 634 4700",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "PIEDRAS NEGRAS",
+        "direccion": "Blvd. de las culturas 620, Col. González, C.P. 26020, Piedras Negras, Coahuila.",
+        "telefono": "878 782 8488",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "SALTILLO",
+        "direccion": "Padre flores nº. 181, zona centro, C.P. 25000, Salctillo, Coahuila.",
+        "telefono": "844 412 0905",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "SAN JUAN DE SABINAS",
+        "direccion": "S. Simpson LB, Col del Seis, C.P. 26880, Nueva Rosita, Coah.",
+        "telefono": "861 614 1006",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 7,
+        "nombre": "TORREON",
+        "direccion": "Boulevard las quintas no.50 locales 17, 18,19 y anexo, col. Quintas San Isidro, C.P. 27016, Torreón Coahuila.",
+        "telefono": "871 314 2500",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "COLIMA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "COLIMA",
+        "direccion": "Plaza la paz, avenida de la paz 33, residencial santa Gertrudis, C.P. 28017, Colima, Colima.",
+        "telefono": "312 312 9945",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "COLIMA",
+        "direccion": "Tercer anillo periférico #301 Plaza Entralia, Local 270 altos, colonia valle dorado, C.P. 28000, Colima, Colima.",
+        "telefono": "312 312 0511",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "CHIAPAS",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "ARRIAGA",
+        "direccion": "Primera Calle Nte. 5, Centro, Capricho, C.P. 30450, Arriaga, Chis.",
+        "telefono": "966 690 5304",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "PALENQUE",
+        "direccion": "Calle Segunda Pte. Sur (Aldama 70, Unitaria de los Trabajadores, C.P. 29960, Palenque, Chis.",
+        "telefono": "916 688 1322",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "TAPACHULA",
+        "direccion": "3a Avenida Sur Aldama 45-A, Los Naranjos, Centro, C.P. 30700, Tapachula de Córdova y Ordoñez, Chiapas.",
+        "telefono": "962 626 2708",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "TUXTLA GUTIERREZ",
+        "direccion": "Blvd Andres Serra Rojas 1090, Primer nivel, Paso Limón, C.P. 29045 Tuxtla Gutiérrez, Chis.",
+        "telefono": "961 614 1462",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "CHIHUAHUA",
+    "oficinas":[
+      {
+        "id": 1,
+        "nombre": "CUAUHTEMOC",
+        "direccion": "Calle Morelos Y 23 Fraccionamiento San Antonio,col. Centro.C.P. 31501, Cuauhtémoc, Chih.",
+        "telefono": "625 581 9323",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "DELICIAS",
+        "direccion": "Avenida Sexta y primera Oriente, Colonia Centro,C.P. 33000, Delicias, Chih.",
+        "telefono": "639 479 9337",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "HIDALGO DEL PARRAL",
+        "direccion": "Calle 20 de noviembre s/n,col. Centro,C.P. 33800, Hidalgo del Parral, Chih.",
+        "telefono": "627 527 4700",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+    },
+  {
+    "id": 9,
+    "nombre": "CIUDAD DE MEXICO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "AZCAPOTZALCO"
+      },
+      {
+        "id": 2,
+        "nombre": "COYOACAN",
+        "direccion": "Av. Miguel Ángel de Quevedo 1144, Parque San Andrés, Coyoacán, C.P. 04010, Ciudad De México, CDMX.",
+        "telefono": "800 8010 773",
+        "horarios": "Lunes a domingos de 8:00 a 20:00"
+      },
+      {
+        "id": 3,
+        "nombre": "CUAJIMALPA DE MORELOS",
+        "direccion": "Centro Comercial Santa Fe, Local 1003 Piso 1, Vasco De Quiroga No. 3800, Col. Antigua Mina La Totolapa, Alcaldia Cuajimalpa De Morelos, C.P. 05109, Ciudad De México, CDMX.",
+        "telefono": "553 686 5145",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "GUSTAVO A. MADERO",
+        "direccion": "Gral. Vicente Villada Y 5 De Febrero, Edificio Anexo Alcaldia G.A.M. C.P. 07050, Ciudad De México, CDMX.",
+        "telefono": "556 384 5479",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "IZTACALCO",
+        "direccion": "Av. Río Churubusco Y Calle Te S/N, Col. Gabriel Ramos Millán, Alcaldia Iztacalco, C.P. 08000, Ciudad De México, CDMX.",
+        "telefono": "556 384 5485",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "ALVARO OBREGON",
+        "direccion": "Batallón De San Patricio S/N, esquina Calle 10 Y Canarios, Col. Toltecas, Alcaldía Álvaro Obregón, C.D. 01150, Ciudad de México, CDMX.",
+        "telefono": "556 384 5476",
+        "horarios": "Lunes a domingos de 8:00 a 20:00"
+      },
+      {
+        "id": 7,
+        "nombre": "TLALPAN",
+        "direccion": "Insurgentes Sur Casi Esq. Periférico Col. Villa Olímpica, Alcaldia Tlalpan, C.P. 14020, Ciudad De México, CDMX.",
+        "telefono": "556 384 5489",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 8,
+        "nombre": "MIGUEL HIDALGO",
+        "direccion": "Av. Parque Lira No. 94, Esq. Sóstenes Rocha, Col. Observatorio, Alcaldia Miguel Hidalgo, C.P. 11860, Ciudad De México, CDMX.",
+        "telefono": "553 686 3756",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 9,
+        "nombre": "VENUSTIANO CARRANZA",
+        "direccion": "Aeropuerto Internacional Benito Juárez Local Cf-04 Avenida Capitán Carlos León González S/N Colonia Peñón De Los Baños, Alcaldía Venustiano Carranza, C.P. 15620, Ciudad De México, CDMX.",
+        "telefono": "800 8010 773",
+        "horarios": "Lunes a domingos de 8:00 a 20:00"
+        
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "DURANGO",
+    "oficinas": [
+      
+      {
+        "id": 1,
+        "nombre": "DURANGO",
+        "direccion": "Blvd. Felipe Pescador 680, Armando del Castillo Franco, C.P. 34080, Durango, Dgo.",
+        "telefono": "618 194 9997",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "NUEVO IDEAL",
+        "direccion": "José Ramón Valdez Nº. 503, Zona Centro, C.P. 34420, Nuevo Ideal. Durango.",
+        "telefono": "677 873 1011",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "SANTIAGO PAPASQUIARO",
+        "direccion": "Bruno Martinez 25, Zona Centro, C.P. 34630, Santiago Papasquiaro, Dgo.",
+        "telefono": "674 862 4557",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "GUANAJUATO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "ACAMBARO",
+        "direccion": "38600, Av. M. Hidalgo 365, Zona Centro, C.P. 38600, Acámbaro, Gto.",
+        "telefono": "417 172 6784",
+        "horarios": "Lunes a viernes de 8:00 a 15:00"
+      },
+      {
+        "id": 2,
+        "nombre": "SAN MIGUEL DE ALLENDE",
+        "direccion": "Blvrd de la Conspiración 130, Colonia, C.P. 37748, San Miguel de Allende, Gto.",
+        "telefono": "415 110 3017",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "CELAYA",
+        "direccion": "Plaza Veleros Local 1, Fraccionamiento Del Parque Celaya, C.P. 38020, Celaya, Gto.",
+        "telefono": "461 613 1087",
+        "horarios": "Lunes a viernes de 8:00 a 15:00"
+      },
+      {
+        "id": 4,
+        "nombre": "IRAPUATO",
+        "direccion": "Don Bosco Plaza Comercial Blvd. Luis Donaldo Colosio 1477, El Ranchito, C.P. 36666, Irapuato, Gto.",
+        "telefono": "462 624 7979",
+        "horarios": "Lunes a viernes de 8:00 a 15:00"
+      },
+      {
+        "id": 5,
+        "nombre": "LEON",
+        "direccion": "Calle San Gregorio 507, Jardines de Los Naranjos, Santa Rosa de Lima Sur, C.P. 37210, León, Gto.",          
+        "telefono": "477 779 6641",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "MOROLEON",
+        "direccion": "Brasil 71, Modelo, C.P. 38823, Moroleón, Gto.",            
+        "telefono": "445 458 3341 EXT. 103",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 7,
+        "nombre": "PENJAMO",
+        "direccion": "Brasil 71, Modelo, C.P. 38823, Moroleón, Gto.",            
+        "telefono": "551 241 0525",
+        "horarios": "Lunes a viernes de 8:00 a 16:00 y sábados de 9:00 a 17:00"
+      },
+      {
+        "id": 8,
+        "nombre": "SAN FELIPE",
+        "direccion": "Casa juárez planta alta, zona centro, C.P. 37600, San Felipe, Gto.",            
+        "telefono": "428 685 1593",
+        "horarios": "Lunes a viernes de 8:30 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "GUERRERO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "ACAPULCO DE JUAREZ",
+        "direccion": "Av Costera Miguel Alemán 63, Local C-16 2Do. Nivel, Fracc. Club Deportivo C.P. 39690, Acapulco de Juárez, Gro.",            
+        "telefono": "744 250 6911",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "ALTAMIRANO",
+        "direccion": "Av Costera Miguel Alemán 63, Local C-16 2Do. Nivel, Fracc. Club Deportivo C.P. 39690, Acapulco de Juárez, Gro.",            
+        "telefono": "744 250 6911",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "HIDALGO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "PACHUCA DE SOTO",
+        "direccion": "Av Benito Juárez 400 A, Colonia Centro, C.P. 42000, Pachuca de Soto, Hgo.",            
+        "telefono": "771 287 5401",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "TEPEJI DEL RIO DE OCAMPO",
+        "direccion": "Palacio Municipal, Col. Centro, Tepeji Del Rio, C.P. 42850, Tepeji Del Río, Hgo.",            
+        "telefono": "773 733 0188 EXT. 111",
+        "horarios": "Lunes a viernes de 8:30 a 16:30 y sábados de 9:00 a 13:00"
+      },
+      {
+        "id": 3,
+        "nombre": "TULANCINGO DE BRAVO",
+        "direccion": "Plaza Manuel Fernando Soto S/N Paltos, Fracc. Los Pinos, C.P. 43626, Tulancingo, Hgo.",            
+        "telefono": "775 755 4910",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "JALISCO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "AMECA",
+        "direccion": "Zaragoza 66, Los Naranjos, C.P. 46600, Ameca, Jal.",            
+        "telefono": "375 758 0734",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "ARANDAS",
+        "direccion": "Calle Álvaro Obregón 50, Unidad Administrativa No.1 Colonia Centro, C.P. 47180, Arandas, Jal.",            
+        "telefono": "348 784 7404",
+        "horarios": "Lunes a viernes de 8:00 a 15:30"
+      },
+      {
+        "id": 3,
+        "nombre": "ATOTONILCO EL ALTO",
+        "direccion": "Unidad Administrativa Benito Juárez S/N Col. Infonavit, C.P. 47750, Atotonilco el Alto, Jal.",            
+        "telefono": "391 917 3425",
+        "horarios": "Lunes a viernes de 8:00 a 15:30"
+      },
+      {
+        "id": 4,
+        "nombre": "AUTLAN DE NAVARRO",
+        "direccion": "Venustiano Carranza No. 1 Col. Centro, C.P. 48900, Autlán de Navarro, Jal.",            
+        "telefono": "317 382 5114",
+        "horarios": "Lunes a viernes de 8:00 a 15:00"
+        
+      },
+      {
+        "id": 5,
+        "nombre": "COLOTLAN",
+        "direccion": "Edif. Unise (Unidad Regional De Servicios Del Estado) Planta Baja Kilómetro 01 Carretera Colotlan C.P. 46200, Colotlán, Jal.",            
+        "telefono": "499 992 6010",
+        "horarios": "Lunes a sábado de 9:00 a 15:00"
+      },
+      {
+        "id": 6,
+        "nombre": "ETZATLAN",
+        "direccion": "Independencia 227, Centro, C.P. 46500, Etzatlán, Jal.",            
+        "telefono": "386 753 0291",
+        "horarios": "Lunes a viernes de 8:00 a 15:30"
+      },
+      {
+        "id": 7,
+        "nombre": "GUADALAJARA",
+        "direccion": "Av. Ignacio L. Vallarta 3233, Vallarta Poniente, dentro de Plaza Exhimoda locales 6F y 7F, C.P. 44110, Guadalajara, Jal.",            
+        "telefono": "331 594 9336",
+        "horarios": "Lunes a viernes de 8:00 a 14:00 y sábados de 8:30 a 13:00"
+      },
+      {
+        "id": 8,
+        "nombre": "LAGOS DE MORENO",
+        "direccion": "Nicolas Bravo No. 714, Col. Centro, C.P. 47400, Lagos de Moreno, Jal.",            
+        "telefono": "474 403 2496",
+        "horarios": "Lunes a viernes de 8:00 a 14:00"
+      },
+      {
+        "id": 9,
+        "nombre": "TEPATITLAN DE MORELOS",
+        "direccion": "Matamoros central Local 6, Col. Centro, C.P. 47600, Tepatitlán de Morelos, Jal.",            
+        "telefono": "378 781 5098",
+        "horarios": "Lunes a viernes de 8:00 a 16:00"
+      },
+      {
+        "id": 10,
+        "nombre": "SAN PEDRO TLAQUEPAQUE",
+        "direccion": "Calle Donato Guerra 5, Centro, C.P. 45500, San Pedro Tlaquepaque, Jal.",            
+        "telefono": "33 3562 7007 EXT. 2216, 2217, 2218",
+        "horarios": "Lunes a viernes de 8:00 a 15:00"
+      },
+      {
+        "id": 11,
+        "nombre": "TONALA",
+        "direccion": "Av. Rio Nilo 8096, junto Wal-Mart, Lomas Dorada, C.P. 45402, Tonalá, Jal.",            
+        "telefono": "333 837 2469",
+        "horarios": "Lunes a viernes de 8:00 a 15:00"
+      },
+      {
+        "id": 12,
+        "nombre": "ZAPOPAN",
+        "direccion": "Av. de las Américas 9, Plaza Patria, Zona A, Local A-6, Colonia Jacarandas, C.P. 45160, Zapopan, Jal.",            
+        "telefono": " 331 816 9002",
+        "horarios": "Lunes a domingos de 8:00 a 20:00"
+      },
+           {
+        "id": 13,
+        "nombre": "CIUDAD GUZMAN",
+        "direccion": "Clemente Orozco 22, Ciudad Guzmán Centro, C.P. 49000, Cd Guzman, Jal.",            
+        "telefono": " 341 412 6305",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+   {
+    "id": 15,
+    "nombre": "MEXICO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "ATLACOMULCO",
+        "direccion": "Calle Ing. Luis Galindo Ruiz 312, Edificio «D», Oficina «101, Isidro Fabela, C.P. 50455, Atlacomulco, Estado de México, México.",            
+        "telefono": "712 122 0424",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "CUAUTITLAN IZCALLI",         
+        "direccion": "Avenida La super L 7A y 7B, Centro Urbano Pte, dentro de Mundo E, por el acceso 7, segundo piso, C.P. 54700, Cuautitlán Izcalli, Estado de Méx., México",            
+        "telefono": "555 864 0976",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "NAUCALPAN DE JUAREZ",
+        "direccion": "Av. Mexicas Nº 63, Col. Santa Cruz Acatlan, Naucalpan, C.P. 53150, Naucalpan de Juárez, Estado de México.",            
+        "telefono": "556 384 5497",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "TENANCINGO",
+        "direccion": "Plaza Jardín, C. José María Morelos 102, Centro, C.P. 52400, Tenancingo de Degollado, Estado de México.",            
+        "telefono": "714 142 7644",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "TEXCOCO",
+        "direccion": "Calle Nezahualcoyótl No. 110, Colonia Centro, C.P. 56100, Texcoco, Estado De México.",            
+        "telefono": "595 952 0000",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"         
+      },
+      {
+        "id": 6,
+        "nombre": "TLALNEPANTLA DE BAZ",
+        "direccion": "Boulevard Manuel Ávila Camacho 1007, Local 3-C, Segundo Piso, Col. San Lucas, C.P. 54055, Tlalnepantla De Baz, Estado De México.",            
+        "telefono": "555 362 4121",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 7,
+        "nombre": "TOLUCA",
+        "direccion": "Av. Paseo Tollocan, No. 1195, Int. 27, (Plaza Comercial “La Marketa”) Col. Santa María Totoltepec, C.P. 50245, Toluca, Estado De México, México..",            
+        "telefono": "722 507 9761",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 8,
+        "nombre": "TONATICO",
+        "direccion": "Pl. de La Constitución 1, San Gaspar, Palacio Municipal, C.P. 51950, Tonatico, Edo. De México, México.",            
+        "telefono": "721 141 0041",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 9,
+        "nombre": "VALLE DE BRAVO",
+        "direccion": "Calle Nicolás Bravo 300B, Centro, C.P. 51200, Valle de Bravo, Estado de México, México.",            
+        "telefono": "726 262 1770 ext 109",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+   {
+    "id": 16,
+    "nombre": "MICHOACAN DE OCAMPO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "APATZINGAN",
+        "direccion": "Independencia 78, Centro, Barrio 2, C.P. 60270, Cherán, Mich.",            
+        "telefono": "453 53 45551",
+        "horarios": "Lunes a viernes de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "CHERAN",
+        "direccion": "Constitución de 1814 Sur 1, Centro, C.P. 60600, Apatzingán de la Constitución, Mich.",            
+        "telefono": "423 594 2441",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "HIDALGO",
+        "direccion": "Guadalupe victoria no.17 col. Centro, C.P. 61100, Ciudad Hidalgo, Mich.",            
+        "telefono": "786 154 0374",
+        "horarios": "Lunes a viernes de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "LA PIEDAD",
+        "direccion": "Boulevard Plaza local 1b, Lucio Blanco, Peña, C.P. 59389 La Piedad de Cavadas, Mich.",            
+        "telefono": "352 522 9995",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "LAZARO CARDENAS",
+        "direccion": "Av. Lázaro Cárdenas No. 516, Col. Centro, Palacio Municipal, C.P. 60950, Lázaro Cárdenas, Mich.",            
+        "telefono": "753 540 3300 EXT. 398",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      },
+      {
+        "id": 6,
+        "nombre": "MORELIA",
+        "direccion": "Av Lázaro Cárdenas 3002, Chapultepec Oriente, C.P. 58260 Morelia, Mich., México",            
+        "telefono": "5536 865 581",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      },
+      {
+        "id": 7,
+        "nombre": "PERIBAN DE RAMOS",
+        "direccion": "Priv. de Juárez 26, Centro, C.P. 60440, Peribán de Ramos, Mich.",            
+        "telefono": "354 551 1150  EXT. 117 y 118",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      },
+      {
+        "id": 8,
+        "nombre": "SAHUAYO",
+        "direccion": "Boulevard Lázaro Cárdenas Sur 1190 Local 83, Plaza Feria Sahuayo Col. Noria De Montes,C.P. 59000, Sahuayo de Morelos, Mich.",            
+        "telefono": "353 532 0530",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 9,
+        "nombre": "ZAMORA",
+        "direccion": "Guerrero 82 oriente, colonia centro, zamora, michoacán C.P. 59600, Zamora, Michoacán",            
+        "telefono": "351 512 0001 EXT.125",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 10,
+        "nombre": "ZACUPO",
+        "direccion": "Alvaro Obregon #49, Felipe Angeles, Centro, C.P. 58600. Zacapu, Mich.",            
+        "telefono": "436 363 1566",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 11,
+        "nombre": "ZITACUARO",
+        "direccion": "Calle Ocampo Pte. No 13, Esq. 5 De Mayo, Palacio Municipal, Col. Centro, C.P. 61518, Zitácuaro, Mich",            
+        "telefono": "715 153 7097",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "MORELOS",
+    "oficinas": [
+  
+      {
+        "id": 1,
+        "nombre": "CUERNAVACA",
+        "direccion": "Plaza Los Arcos, Av. Plan de Ayala 501, Teopanzolco, C.P. 62350, Cuernavaca, Mor.",            
+        "telefono": "777 228 6703",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+   {
+    "id": 18,
+    "nombre": "NAYARIT",
+    "oficinas":[
+      {
+        "id": 1,
+        "nombre": "PUERTO VALLARTA",
+        "direccion": "Independencia 123, Proyecto escola, Centro,C.P. 48300, Puerto Vallarta, Jal.",
+        "telefono": "322 223 2500",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "TEPIC",
+        "direccion": "Insurgentes 1121 oriente, col. Los Llanitos,C.P. 63157, Tepic, Nay.",
+        "telefono": "311 212 6590",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+    },
+     {
+    "id": 19,
+    "nombre": "NUEVO LEON",
+    "oficinas":[
+      {
+        "id": 1,
+        "nombre": "APODACA",
+        "direccion": "5 de Mayo 103, Cabecera Municipal, Centro,C.P. 66600, Cd Apodaca, N.L.",
+        "telefono": "818 386 1992",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "GENERAL ESCOBEDO",
+        "direccion": "Av. Manuel L. Barragán 220, Ex Hacienda el Cañada,C.P. 66054, Cd Gral Escobedo, N.L.",
+        "telefono": "818 058 9211",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "GUADALUPE, NUEVO LEON",
+        "direccion": "Gran parque guadalupe unidad tolteca, av. Tolteca esq. Río la silla s/n, col. ToltecaC.P. 67100, Guadalupe, Nuevo León.",
+        "telefono": "81 80 07 6679",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "LINARES",
+        "direccion": "Carretera Galeana, Hidalgo Kilómetro 2.5,C.P. 67700, Linares, N.L.",
+        "telefono": "821 212 7800",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "MONTEMORELOS",
+        "direccion": "Cuauhtémoc 509, Hidalgo Y Cinco De Mayo, Col. Centro,C.P. 67500, Montemorelos, Nuevo León",
+        "telefono": "826 263 7800 EXT. 2202",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "MONTERRY",
+        "direccion": "Av. Eugenio garza sada, no. 2411 y 2413, col. Roma, monterrey, nl. Complejo comercial “paseo tec”, 1er. Nivel, locales l-49, l-50, l-51, l-52, l-53, l-54, l-55, l-56, l-57C.P. 64700, Monterrey, Nuevo León.",
+        "telefono": "812 090 2501",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 7,
+        "nombre": "SAN NICOLAS DE LOS GARZA",
+        "direccion": "Calle Benito Juarez 655, Centro,C.P. 66400, San Nicolás de los Garza, N.L.",
+        "telefono": "818 376 7890",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 8,
+        "nombre": "SAN PEDRO GARZA GARCIA",
+        "direccion": "Av Ignacio Morones Prieto, Avenida Humberto Lobo 2090 Esquina, Del Valle,C.P. 66200, San Pedro Garza García, N.L.",
+        "telefono": "811 052 4150",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 9,
+        "nombre": "SANTA CATARINA",
+        "direccion": "Av Manuel Ordoñez 620, Villa de las Huertas,C.P. 66378, Santa Catarina, N.L.",
+        "telefono": "818 676 1843",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 10,
+        "nombre": "SANTIAGO",
+        "direccion": "El Cercado s/n,C.P. 67300, Santiago, N.L.",
+        "telefono": "812 451 4371",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+    },
+  {
+    "id": 20,
+    "nombre": "OAXACA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "OAXACA",
+        "direccion": "Calle álamos 603, Col. Reforma, Ciudad De Oaxaca, Oaxaca De Juárez, C.P. 68050, Ciudad De Oaxaca, Oaxaca.",            
+        "telefono": "951 502 5643",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "nombre": "PUEBLA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "PUEBLA",
+        "direccion": "Vía Atlixcayotl 1101, Edificio Norte, Planta baja, Reserva Territorial Atlixcayotl, colonia Villas de Atlixco, C.P. 72400, Puebla, Pue.",            
+        "telefono": "222 467 1251",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "nombre": "QUERETARO",
+    
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "QUERETARO",
+        "direccion": "Boulevard Bernardo Quintana 112, Col. Carretas De Santiago, C.P. 76050, Santiago de Querétaro, Qro.",            
+        "telefono": "442 340 0207",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "nombre": "QUINTANA ROO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "SEDE EN CANCUN",
+        "direccion": "Plaza Centro, Av Carlos Nader 8, C.P. 77501, Cancún, Q.R.",            
+        "telefono": "998 272 2639",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "nombre": "SAN LUIS POTOSI",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "SAN LUIS POTOSI",
+        "direccion": "Río Nazas 180, Lomas los Filtros, C.P. 78210, San Luis, S.L.P.",            
+        "telefono": "444 151 5201",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+       {
+        "id": 2,
+        "nombre": "CUIDAD VALLES",
+        "direccion": "Bocanegra 28, local A, Colonia Obrera, C.P. 79050, Cd Valles, S.L.P.",            
+        "telefono": "481 381 5434",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+       {
+        "id": 3,
+        "nombre": "MATEHUALA",
+        "direccion": "Galeana S/N, Zona Centro, C.P. 78700, Matehuala, S.L.P",            
+        "telefono": "488 8820 063",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+       {
+        "id": 4,
+        "nombre": "RIO VERDE",
+        "direccion": "Calle Lic. Benito Juárez García 101, Zona Centro, C.P. 79610, Rioverde, S.L.P.",            
+        "telefono": "487 872 0039",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+           {
+        "id": 5,
+        "nombre": "SOLEDAD DE GRACIANO SANCHEZ",
+        "direccion": "Blas escontria 832, esq. Cruz verde, local 3 C.P. 78430, Soledad de Graciano Sánchez, S.L.P.",            
+        "telefono": "444 128 8960",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    
+    ]
+  },
+   {
+    "id": 25,
+    "nombre": "SINALOA",
+    "oficinas":[
+      {
+        "id": 1,
+        "nombre": "GUASAVE",
+        "direccion": "Calle Lázaro Cárdenas del Rio 787, Col del Bosque,C.P. 81020, Guasave, Sinaloa.",
+        "telefono": "687 871 87082",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "LOS MOCHIS",
+        "direccion": "Palacio Municipal De Ahome, Degollado S/N, Colonia Centro,C.P. 81200, Los Monchis, Sinaloa.",
+        "telefono": "668 816 4033",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "MAZATLAN",
+        "direccion": "Calle campana s/n col. Centro, esq ángel flores,C.P. 82000, Mazatlan, Sinaloa.",
+        "telefono": "669 985 2535",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+    },
+  {
+    "id": 26,
+    "nombre": "SONORA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "AGUA PRIETA",
+        "direccion": "Calle internacional y Ave. Cinco, plaza comercial terán, local 2A, C.P. 84200, Agua Prieta, Sonora.",            
+        "telefono": "633 338 2690",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "CABORCA",
+        "direccion": "Calle 6ta. Esq. Con avenida 0, col. Centro caborca, C.P. 83600, Caborca, Sonora.",            
+        "telefono": "637 372 4843",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      },
+      {
+        "id": 2,
+        "nombre": "CIDAD OBREGON",  
+        "direccion": "Calle Sufragio Efectivo s/n, esq Guerrero, Edificio Yaqui Forum Cum, Col. Centro, C.P. 85000, Cd. Obregón, Sonora.",            
+        "telefono": "644 415 1861",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "GUAYMAS",
+        "direccion": "Av. A. L. Rodríguez 109S, Centro, C.P. 85400, Heroica Guaymas, Sonora.",            
+        "telefono": "622 222 8940",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "HERMOSILLO",
+        "direccion": "Comonfort, Edificio Hermosillo, P.B. Del Centro De Gobierno, C.P. 83270, Hermosillo, Sonora.",            
+        "telefono": "662 207 4052",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "NAVOJOA",
+        "direccion": "Calle Allende 606, Reforma, Navojoa, Son. C.P. 85830, Navojoa, Sonora.",            
+        "telefono": "642 421 5404",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "NOGALES",
+        "direccion": "Av. Ruiz Cortinez Eje Sur 925, Fundó Legal, Municipal, C.P. 84030, Nogales, Sonora.",            
+        "telefono": "631 320 1697",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 7,
+        "nombre": "VICTORIA",
+        "direccion": "Av Francisco Eusebio Kino, esq. calle 26, Burócrata, C.P. 83450, San Luis Río Colorado, Sonora.",            
+        "telefono": "653 536 7380",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "nombre": "TABASCO",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "TABASCO",
+        "direccion": "Juan Estrada Torre 101, Plaza Strada Local 10, Colonia Primero de Mayo, C.P. 86169, Villahermosa, Tabasco.",            
+        "telefono": "993 270 0375",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "nombre": "TAMAULIPAS",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "CIUDAD MANTE",
+        "direccion": "Av Juarez 101, Zona Centro, C.P. 89800, Ciudad Mante, Tamaulipas.",            
+        "telefono": "831 232 8677",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "CIUDAD VICTORIA",
+        "direccion": "Calle 16 5 de Mayo 112, Zona Centro, C.P. 87000, Ciudad Victoria, Tamaulipas..",            
+        "telefono": "834 172 5650",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "MATAMOROS",
+        "direccion": "Calle Primera Y Ave. Constitución S/N C.P. 87330, Matamoros, Tamaulipas.",            
+        "telefono": "868 813 0889",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "NUEVO LAREDO",
+        "direccion": "C. Maclovio Herrera 2809, Ferrocarril, C.P. 88040, Nuevo Laredo, Tamaulipas.",            
+        "telefono": "867 711 35609",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "REYNOSA",
+        "direccion": "Zaragoza 496, Entre Ocampo Y Canales, Zona Centro, C.P. 88500, Reynosa, Tamaulipas.",            
+        "telefono": "899 922 0922",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "TAMPICO",
+        "direccion": "Emilio Carranza 104, Poniente, Junto Al Palacio Municipal, Zona centro, C.P. 89000, Tampico, Tamaulipas.",            
+        "telefono": "833 305 2775",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "nombre": "TLAXCALA",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "APIZACO",
+        "direccion": "Boulevard Emilio Sánchez Piedras No 409-1, Sub Ancla 2-3, Centro Comercial La Antigua Estación, C.P. 90300, Apizaco, Tlaxcala.",            
+        "telefono": "241 418 5693",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "VERACRUZ DE IGNACIO DE LA LLAVE",
+    "oficinas": [
+      {
+        "id": 1,
+        "nombre": "BOCA DEL RIO",
+        "direccion": "Av Las Américas sn, Boticaria, C.P. 94290, Boca Del Río, Veracruz.",            
+        "telefono": "229 9358 444",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+
+      },
+      {
+        "id": 2,
+        "nombre": "COATZACOALCOS",
+        "direccion": "Calle Zaragoza No. 404, Col. Centro, Coatzacoalcos, C.P. 96400, Coatzacoalcos, Veracruz.",            
+        "telefono": "921 211 2100",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "CORDOBA",
+        "direccion": "Calle 1 Entre Avenida 3 Y 5 No. 306, Col. Centro, C.P. 94500, Córdoba, Veracruz.",            
+        "telefono": "271 712 3415",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "ORIZABA",
+        "direccion": "Av. Fco. I. Madero S/N Entre Poniente 1 y 2, Zona Centro, C.P. 94300, Orizaba, Veracruz.",            
+        "telefono": "272 72 56597",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "PAPANTLA DE OLARTE",
+        "direccion": "Calle Artes S/N, Col. Centro, C.P. 93400, Papantla De Olarte, Veracruz.",            
+        "telefono": "784 842 7174",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "TUXPAN",
+        "direccion": "Av. Juárez S/N, Col. Centro, C.P. 92800, Tuxpan, Veracruz.",            
+        "telefono": "783 834 0719",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 7,
+        "nombre": "XALAPA-ENRIQUE",
+        "direccion": "Rubi Animas, .P. 91190, Xalapa-Enríquez, Veracruz.",
+        "telefono": "228 812 7213",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+
+    ]
+  },
+  {
+    "id": 31,
+    "nombre": "YUCATAN",
+    "oficinas":[
+      {
+        "id": 1,
+        "nombre": "MERIDADA",
+        "direccion": "Calle 56 A No. 442, Locales 101, 103, 105, 107, 109, 03 Y 05, Paseo Montejo,C.P. 97000, Mérida, Yucatán.",
+        "telefono": "999 401 1259",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "nombre": "ZACATECAS",
+    "oficinas":[
+      {
+        "id": 1,
+        "nombre": "FRESNILLO",
+        "direccion": "11 de Jul., Magisterial C.P. 99040, Fresnillo, Zacatecas.",
+        "telefono": "493 933 1489",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 2,
+        "nombre": "GUADALUPE, ZACATECAS",
+        "direccion": "Av. México No. 2, Colonia Dependencias Federales En Guadalupe,C.P. 98618, Guadalupe, Zacatecas.",
+        "telefono": "492 148 0423",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 3,
+        "nombre": "JEREZ DE GARCIA SALINAS",
+        "direccion": "Benito Juárez 1, Zona Centro,C.P. 99300, Jerez de García Salinas, Zacatecas.",
+        "telefono": "494 945 7680",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 4,
+        "nombre": "JUAN ALDAMA",
+        "direccion": "Av. Centenario Sur No. 33, CentrO C.P. 98300, Juan Aldama, Zacatecas.",
+        "telefono": "498 982 9044",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 5,
+        "nombre": "JUCHILAPA",
+        "direccion": "Mixtón s/n, Centro,C.P. 99960, Juchipila, Zacatecas.",
+        "telefono": "467 952 1665",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      },
+      {
+        "id": 6,
+        "nombre": "SOMBRERETE",
+        "direccion": "El Chahuita s/n,C.P. 99103, Sombrerete, Zacatecas.",
+        "telefono": "433 935 0348",
+        "horarios": "Lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 16:00"
+      }
+    ]
+  }
+]

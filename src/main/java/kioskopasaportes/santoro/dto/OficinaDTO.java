@@ -1,11 +1,17 @@
+// src/main/java/kioskopasaportes/santoro/dto/OficinaDTO.java
 package kioskopasaportes.santoro.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class OficinaDTO {
-    private Long id;
+    private Integer id;
     private String nombre;
     private String direccion;
-    private String horario; // JSON textual
+    private String telefono;
+    private String horarios;
 }

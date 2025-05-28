@@ -1,3 +1,4 @@
+// src/main/java/kioskopasaportes/santoro/controller/CatalogoController.java
 package kioskopasaportes.santoro.controller;
 
 import java.util.List;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kioskopasaportes.santoro.dto.EstadoDTO;
 import kioskopasaportes.santoro.dto.MunicipioDTO;
+import kioskopasaportes.santoro.dto.OficinaDTO;
 import kioskopasaportes.santoro.service.EstadoMunicipioService;
+import kioskopasaportes.santoro.service.OficinaService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -19,20 +22,30 @@ import lombok.RequiredArgsConstructor;
 public class CatalogoController {
 
     private final EstadoMunicipioService estadoMunicipioService;
+    private final OficinaService oficinaService;
 
-    /**
-     * Devuelve todos los estados (sin municipios).
-     */
-   @GetMapping("/estados")
-public ResponseEntity<List<EstadoDTO>> listarEstados() {
-    return ResponseEntity.ok(estadoMunicipioService.getAllEstados());
-}
+    @GetMapping("/estados")
+    public ResponseEntity<List<EstadoDTO>> listarEstados() {
+        return ResponseEntity.ok(estadoMunicipioService.getAllEstados());
+    }
 
-@GetMapping("/estados/{id}/municipios")
-public ResponseEntity<List<MunicipioDTO>> listarMunicipios(@PathVariable Integer id) {
-    var ms = estadoMunicipioService.getMunicipiosPorEstado(id);
-    if (ms.isEmpty()) return ResponseEntity.notFound().build();
-    return ResponseEntity.ok(ms);
-}
+    @GetMapping("/estados/{id}/municipios")
+    public ResponseEntity<List<MunicipioDTO>> listarMunicipios(
+            @PathVariable("id") Integer idEstado) {
 
+        var lst = estadoMunicipioService.getMunicipiosPorEstado(idEstado);
+        if (lst.isEmpty()) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(lst);
+    }
+
+    @GetMapping("/estados/{id}/oficinas")
+    public ResponseEntity<List<OficinaDTO>> listarOficinas(
+            @PathVariable("id") Integer idEstado) {
+
+        var oficinas = oficinaService.getOficinasPorEstado(idEstado);
+        if (oficinas.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(oficinas);
+    }
 }
