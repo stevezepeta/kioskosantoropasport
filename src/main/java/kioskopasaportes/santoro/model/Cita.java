@@ -51,10 +51,14 @@ public class Cita {
     private LocalTime horaCita;
 
     @Lob
-    @Column(name = "codigo_qr")
+    @Column(name = "codigo_qr", columnDefinition = "LONGBLOB")
     private byte[] codigoQr;
 
     @CreationTimestamp
     @Column(name = "creado_en", nullable = false, updatable = false)
     private OffsetDateTime creadoEn;
+
+    @Column(name = "folio", length = 50, unique = true)
+    private String folio;
+
 }
