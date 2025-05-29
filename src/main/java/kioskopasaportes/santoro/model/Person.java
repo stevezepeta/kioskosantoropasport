@@ -1,15 +1,12 @@
 package kioskopasaportes.santoro.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,11 +21,9 @@ import lombok.Setter;
 public class Person {
 
     @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "id_person")  // <--- Esto es clave
-private Long idPerson;
-
-    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_person")
+    private Long idPerson;
 
     @Column(length = 225, nullable = false, unique = true)
     private String curp;
@@ -60,13 +55,13 @@ private Long idPerson;
     @Column(length = 100)
     private String municipio;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Cita> citas;
+    // === ELIMINADO: Relación con Cita ===
+    // @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
+    // private List<Cita> citas;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Pasaporte> pasaportes;
-    
+    // @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
+    // private List<Pasaporte> pasaportes;
+
     @Column(length = 500)
-    private String facePhoto; 
-
+    private String facePhoto;
 }

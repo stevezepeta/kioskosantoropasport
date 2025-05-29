@@ -8,14 +8,10 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,20 +32,17 @@ public class Cita {
     @Column(name = "ciudadano_id_externo", nullable = false)
     private Long ciudadanoIdExterno;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "pasaporte_id", nullable = false,
-                foreignKey = @ForeignKey(name = "fk_cita_pasaporte"))
-    private Pasaporte pasaporte;
+    // ID de la oficina seleccionada
+    @Column(name = "oficina_id", nullable = false)
+    private Integer oficinaId;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "oficina_id", nullable = false,
-                foreignKey = @ForeignKey(name = "fk_cita_oficina"))
-    private Oficina oficina;
+    // Nombre de la oficina seleccionada
+    @Column(name = "oficina_nombre", length = 150)
+    private String oficinaNombre;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "person_id", nullable = false,
-                foreignKey = @ForeignKey(name = "fk_cita_persona"))
-    private Person person;
+    // Relación a la persona que agenda la cita (solo ID)
+    @Column(name = "person_id", nullable = false)
+    private Long personId;
 
     @Column(name = "fecha_cita", nullable = false)
     private LocalDate fechaCita;

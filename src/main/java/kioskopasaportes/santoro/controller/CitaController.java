@@ -1,67 +1,66 @@
 package kioskopasaportes.santoro.controller;
 
-import java.net.URI;
 import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalTime;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.validation.Valid;
-import kioskopasaportes.santoro.dto.CitaDTO;
-import kioskopasaportes.santoro.service.CitaService;
+import kioskopasaportes.santoro.dto.CitaRequestDTO;
+import kioskopasaportes.santoro.dto.OficinaDTO;
+import kioskopasaportes.santoro.model.Cita;
+import kioskopasaportes.santoro.model.Person;
+import kioskopasaportes.santoro.repository.CitaRepository;
+import kioskopasaportes.santoro.repository.PersonRepository;
+import kioskopasaportes.santoro.service.OficinaService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/api/citas")
+@RequestMapping("/api/cita")
+@RequiredArgsConstructor
+@Slf4j
 public class CitaController {
 
-    private static final Logger logger = LoggerFactory.getLogger(CitaController.class);
+    private final CitaRepository citaRepository;
+    private final PersonRepository personRepository;
+    private final OficinaService oficinaService;  // <-- ¡Agregado aquí!
 
-    private final CitaService service;
+    @PostMapping("/{personId}")
+    public ResponseEntity<?> crearCita(
+        @PathVariable Long personId,
+        @RequestBody CitaRequestDTO request
+    ) {
+        Person person = personRepository.findById(personId).orElse(null);
+        if (person == null) {
+            return ResponseEntity.badRequest().body("Persona no encontrada");
+        }
 
-    public CitaController(CitaService service) {
-        this.service = service;
-    }
+        // Buscar oficina en el catálogo JSON
+        OficinaDTO oficina = oficinaService.getOficinasPorEstado(request.getEstadoId())
+                                           .stream()
+                                           .filter(o -> o.getId().equals(request.getOficinaId()))
+                                           .findFirst()
+                                           .orElse(null);
 
-    /* ---------- CREATE ---------- */
-    @PostMapping
-    public ResponseEntity<CitaDTO> crear(@Valid @RequestBody CitaDTO dto) {
-        logger.info("Creando cita para ciudadano {}", dto.getCiudadanoIdExterno());
-        CitaDTO creada = service.crear(dto);
-        return ResponseEntity
-                .created(URI.create("/api/citas/" + creada.getId()))
-                .body(creada);
-    }
+        if (oficina == null) {
+            return ResponseEntity.badRequest().body("Oficina no encontrada");
+        }
 
-    /* ---------- READ ---------- */
-    @GetMapping(params = "fecha")
-    public List<CitaDTO> listarPorFecha(@RequestParam LocalDate fecha) {
-        logger.debug("Listando citas por fecha {}", fecha);
-        return service.listarPorFecha(fecha);
-    }
+        Cita cita = new Cita();
+        cita.setCiudadanoIdExterno(person.getIdPerson());
+        cita.setPersonId(person.getIdPerson());
+        cita.setOficinaId(oficina.getId());
+        cita.setOficinaNombre(oficina.getNombre());
+        cita.setFechaCita(LocalDate.parse(request.getFecha()));
+        cita.setHoraCita(LocalTime.parse(request.getHora()));
 
-    /* ---------- DELETE ---------- */
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> cancelar(@PathVariable Long id) {
-        logger.warn("Cancelando cita {}", id);
-        service.cancelar(id);
-        return ResponseEntity.noContent().build();
-    }
+        citaRepository.save(cita);
 
-    /* ---------- REFRESH opcional ---------- */
-    @PostMapping("/refresh")
-    public ResponseEntity<String> refreshCache() {
-        // lógica opcional de refresco
-        logger.info("Refrescando cache de citas");
-        return ResponseEntity.ok("Citas refrescadas");
+        return ResponseEntity.ok("Cita creada");
     }
 }
