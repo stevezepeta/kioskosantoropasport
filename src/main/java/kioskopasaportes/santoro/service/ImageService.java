@@ -1,16 +1,5 @@
 package kioskopasaportes.santoro.service;
 
-import kioskopasaportes.santoro.model.Image;
-import kioskopasaportes.santoro.model.Person;
-import kioskopasaportes.santoro.repository.ImageRepository;
-import kioskopasaportes.santoro.repository.PersonRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +9,18 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
+
+import kioskopasaportes.santoro.model.Image;
+import kioskopasaportes.santoro.model.Person;
+import kioskopasaportes.santoro.repository.ImageRepository;
+import kioskopasaportes.santoro.repository.PersonRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
@@ -109,7 +110,10 @@ public class ImageService {
             return null;
         }
     }
-
+public byte[] loadImageBytes(String imagePath) throws IOException {
+    Path path = Paths.get(imagePath);
+    return Files.readAllBytes(path);
+}
     public enum ImageType {
         USER, CUSTOMER
     }
