@@ -1,7 +1,10 @@
 package kioskopasaportes.santoro.model.dto;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import kioskopasaportes.santoro.dto.EstadoDTO;
+import kioskopasaportes.santoro.dto.MunicipioDTO;
 import lombok.Data;
 
 @Data
@@ -16,9 +19,10 @@ public class FingerprintVerificationResponseDTO {
     private String sexo;
     private String nacionalidad;
     private String direccion;
-    private String estado;
-    private String municipio;
+    private EstadoDTO estado;
+    private MunicipioDTO municipio;
     private String facePhoto;
+    private List<MunicipioDTO> municipios;
     // Resultado biométrico
     // private boolean match;
     // private BigDecimal score;

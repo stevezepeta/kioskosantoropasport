@@ -2,6 +2,7 @@ package kioskopasaportes.santoro.service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.core.io.ClassPathResource;
@@ -23,31 +24,43 @@ public class EstadoMunicipioService {
 
     @PostConstruct
     void init() throws IOException {
-        // Carga el JSON una sola vez al arrancar
+        // Carga el JSON una sola vez al arrancar (ajusta la ruta si tu archivo está en otra carpeta)
         var file = new ClassPathResource("data/estados-municipios.json").getInputStream();
-        catalogo = mapper.readValue(file, new TypeReference<>() {});
+        catalogo = mapper.readValue(file, new TypeReference<List<EstadoMunicipioDTO>>() {});
     }
 
-    /**
-     * Devuelve solo los estados (id + nombre).
-     */
+    /** Devuelve solo los estados (id + nombre). */
     public List<EstadoDTO> getAllEstados() {
         return catalogo.stream()
-                       .map(e -> new EstadoDTO(e.getId(), e.getNombre()))
-                       .collect(Collectors.toList());
+                .map(e -> new EstadoDTO(e.getId(), e.getNombre()))
+                .collect(Collectors.toList());
     }
 
-    /**
-     * Devuelve los municipios de un estado concreto (por su id).
-     */
+    /** Devuelve los municipios de un estado concreto (por su id). */
     public List<MunicipioDTO> getMunicipiosPorEstado(Integer idEstado) {
         return catalogo.stream()
-                       .filter(e -> e.getId().equals(idEstado))
-                       .findFirst()
-                       .map(EstadoMunicipioDTO::getMunicipios)
-                       .orElse(List.of())
-                       .stream()
-                       .map(m -> new MunicipioDTO(m.getId(), m.getNombre()))
-                       .collect(Collectors.toList());
+                .filter(e -> e.getId().equals(idEstado))
+                .findFirst()
+                .map(EstadoMunicipioDTO::getMunicipios)
+                .orElse(List.of());
+    }
+
+    /** Busca un estado por su nombre, regresa el objeto completo (id, nombre, municipios). */
+    public Optional<EstadoMunicipioDTO> getEstadoByNombre(String nombreEstado) {
+        return catalogo.stream()
+                .filter(e -> e.getNombre().equalsIgnoreCase(nombreEstado))
+                .findFirst();
+    }
+
+    /** Busca un municipio por nombre e id de estado. */
+    public Optional<MunicipioDTO> getMunicipioByNombre(Integer idEstado, String nombreMunicipio) {
+        return getMunicipiosPorEstado(idEstado).stream()
+                .filter(m -> m.getNombre().equalsIgnoreCase(nombreMunicipio))
+                .findFirst();
+    }
+
+    /** Devuelve el catálogo completo (estados con municipios anidados). */
+    public List<EstadoMunicipioDTO> getCatalogoCompleto() {
+        return catalogo;
     }
 }

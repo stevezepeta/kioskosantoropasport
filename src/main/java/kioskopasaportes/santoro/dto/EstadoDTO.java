@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public class EstadoDTO {
     private Integer id;
     private String nombre;
+
 }
