@@ -3,7 +3,6 @@ package kioskopasaportes.santoro.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Base64;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -17,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import kioskopasaportes.santoro.dto.EstadoDTO;
 import kioskopasaportes.santoro.dto.EstadoMunicipioDTO;
 import kioskopasaportes.santoro.dto.FingerprintResultDTO;
-import kioskopasaportes.santoro.dto.MunicipioDTO;
 import kioskopasaportes.santoro.model.FingerPrint;
 import kioskopasaportes.santoro.model.Person;
 import kioskopasaportes.santoro.model.Pasaporte;
@@ -117,19 +115,16 @@ public class KioskoController {
             log.info("¡MATCH exitoso! Dedo: {} - Score: {}, Porcentaje: {}", matchedFinger, matchResult.getScore(), matchResult.getPercentage());
 
             // GUARDAR/ACTUALIZAR LA FOTO FACIAL si existe
-            String facePhotoPath = person.getFacePhoto(); // la ruta existente (si ya estaba)
+            String facePhotoPath = person.getFacePhoto();
             if (facePhoto != null && !facePhoto.isEmpty()) {
                 String baseDir = "C:/Users/Windows/Pictures/huellaskiosko/Cara";
                 String userDir = baseDir + "/" + curp;
                 File dir = new File(userDir);
                 if (!dir.exists()) dir.mkdirs();
 
-                // Elimina la foto anterior si existe
                 if (facePhotoPath != null && !facePhotoPath.isBlank()) {
                     File prevFile = new File(facePhotoPath);
-                    if (prevFile.exists()) {
-                        prevFile.delete();
-                    }
+                    if (prevFile.exists()) prevFile.delete();
                 }
 
                 String filename = "face_" + System.currentTimeMillis() + ".jpg";
@@ -148,9 +143,18 @@ public class KioskoController {
             // Buscar pasaporte asociado a la persona
             Pasaporte pasaporte = pasaporteRepository.findByPersona(person).orElse(null);
 
+            // === Buscar estado como objeto con id y nombre ===
+            EstadoDTO estadoDTO = null;
+            if (person.getEstado() != null && !person.getEstado().isBlank()) {
+                Optional<EstadoMunicipioDTO> estadoOpt = estadoMunicipioService.getEstadoByNombre(person.getEstado());
+                if (estadoOpt.isPresent()) {
+                    EstadoMunicipioDTO estadoCat = estadoOpt.get();
+                    estadoDTO = new EstadoDTO(estadoCat.getId(), estadoCat.getNombre());
+                }
+            }
+
             // Prepara la respuesta del DTO
             FingerprintVerificationResponseDTO response = new FingerprintVerificationResponseDTO();
-            // Datos de la persona
             response.setIdPerson(person.getIdPerson());
             response.setCurp(person.getCurp());
             response.setNombres(person.getNombres());
@@ -160,6 +164,7 @@ public class KioskoController {
             response.setNacionalidad(person.getNacionalidad());
             response.setLugarNacimiento(person.getLugarNacimiento());
             response.setFacePhoto(facePhotoPath);
+            response.setEstado(estadoDTO); // <<--- Estado como objeto
 
             // Datos del pasaporte (si existe)
             if (pasaporte != null) {
@@ -172,9 +177,6 @@ public class KioskoController {
                 response.setFechaExpiracion(pasaporte.getFechaExpiracion());
                 response.setMrz(pasaporte.getMrz());
             }
-
-            // (Opcional) Si quieres estado y municipio parseados de lugarNacimiento o desde Person
-            // Puedes adaptarlo si tienes esa lógica
 
             log.info("Enviando respuesta: {}", response);
 

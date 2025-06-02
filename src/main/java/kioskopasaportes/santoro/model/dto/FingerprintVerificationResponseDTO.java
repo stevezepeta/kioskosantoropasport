@@ -2,6 +2,7 @@ package kioskopasaportes.santoro.model.dto;
 
 import java.time.LocalDate;
 
+import kioskopasaportes.santoro.dto.EstadoDTO; // <--- IMPORTANTE
 import lombok.Data;
 
 @Data
@@ -15,6 +16,8 @@ public class FingerprintVerificationResponseDTO {
     private LocalDate fechaNacimiento;
     private String lugarNacimiento;
     private String facePhoto;
+
+    private EstadoDTO estado; // <--- AGREGA ESTE CAMPO
 
     // Datos del pasaporte
     private String numeroPasaporte;
