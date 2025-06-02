@@ -20,9 +20,11 @@ import kioskopasaportes.santoro.dto.FingerprintResultDTO;
 import kioskopasaportes.santoro.dto.MunicipioDTO;
 import kioskopasaportes.santoro.model.FingerPrint;
 import kioskopasaportes.santoro.model.Person;
+import kioskopasaportes.santoro.model.Pasaporte;
 import kioskopasaportes.santoro.model.dto.FingerprintVerificationResponseDTO;
 import kioskopasaportes.santoro.repository.FingerPrintRepository;
 import kioskopasaportes.santoro.repository.PersonRepository;
+import kioskopasaportes.santoro.repository.PasaporteRepository;
 import kioskopasaportes.santoro.service.EstadoMunicipioService;
 import kioskopasaportes.santoro.service.FingerprintService;
 import lombok.RequiredArgsConstructor;
@@ -36,6 +38,7 @@ public class KioskoController {
 
     private final PersonRepository personRepository;
     private final FingerPrintRepository fingerPrintRepository;
+    private final PasaporteRepository pasaporteRepository;
     private final FingerprintService fingerprintService;
     private final EstadoMunicipioService estadoMunicipioService;
 
@@ -57,7 +60,7 @@ public class KioskoController {
                 log.warn("Persona NO encontrada para CURP: {}", curp);
                 return ResponseEntity.badRequest().build();
             }
-            log.info("Persona encontrada: {} {}", person.getNombres(), person.getPrimerApellido());
+            log.info("Persona encontrada: {} {}", person.getNombres(), person.getApellidos());
 
             // Buscar la huella registrada para la persona
             FingerPrint fingerPrint = fingerPrintRepository.findByPerson(person).orElse(null);
@@ -142,43 +145,36 @@ public class KioskoController {
                 log.info("Foto facial guardada/actualizada en: {}", facePhotoPath);
             }
 
-            // === OBTENER EL ESTADO Y MUNICIPIO CON ID Y NOMBRE DEL CATÁLOGO ===
-            Optional<EstadoMunicipioDTO> estadoOpt = estadoMunicipioService.getEstadoByNombre(person.getEstado());
-            EstadoDTO estadoDTO = null;
-            MunicipioDTO municipioDTO = null;
-            List<MunicipioDTO> municipiosDeEstado = List.of();
+            // Buscar pasaporte asociado a la persona
+            Pasaporte pasaporte = pasaporteRepository.findByPersona(person).orElse(null);
 
-            if (estadoOpt.isPresent()) {
-                EstadoMunicipioDTO estadoCat = estadoOpt.get();
-                estadoDTO = new EstadoDTO(estadoCat.getId(), estadoCat.getNombre());
-                municipiosDeEstado = estadoCat.getMunicipios();
-
-                Optional<MunicipioDTO> municipioOpt = estadoCat.getMunicipios().stream()
-                        .filter(m -> m.getNombre().equalsIgnoreCase(person.getMunicipio()))
-                        .findFirst();
-                if (municipioOpt.isPresent()) {
-                    municipioDTO = municipioOpt.get();
-                }
-            }
-
-            // Prepara la respuesta
+            // Prepara la respuesta del DTO
             FingerprintVerificationResponseDTO response = new FingerprintVerificationResponseDTO();
+            // Datos de la persona
             response.setIdPerson(person.getIdPerson());
             response.setCurp(person.getCurp());
             response.setNombres(person.getNombres());
-            response.setPrimerApellido(person.getPrimerApellido());
-            response.setSegundoApellido(person.getSegundoApellido());
+            response.setApellidos(person.getApellidos());
             response.setFechaNacimiento(person.getFechaNacimiento());
             response.setSexo(person.getSexo());
             response.setNacionalidad(person.getNacionalidad());
-            response.setDireccion(person.getDireccion());
-            response.setEstado(estadoDTO);
-            response.setMunicipio(municipioDTO);
+            response.setLugarNacimiento(person.getLugarNacimiento());
             response.setFacePhoto(facePhotoPath);
 
-            // === AGREGA LOS CATÁLOGOS PARA EL FRONT ===
-            // response.setEstados(estadoMunicipioService.getAllEstados());
-            // response.setMunicipios(municipiosDeEstado);
+            // Datos del pasaporte (si existe)
+            if (pasaporte != null) {
+                response.setNumeroPasaporte(pasaporte.getNumeroPasaporte());
+                response.setTipoDocumento(pasaporte.getTipoDocumento());
+                response.setCodigoPais(pasaporte.getCodigoPais());
+                response.setLugarEmision(pasaporte.getLugarEmision());
+                response.setAutoridad(pasaporte.getAutoridad());
+                response.setFechaEmision(pasaporte.getFechaEmision());
+                response.setFechaExpiracion(pasaporte.getFechaExpiracion());
+                response.setMrz(pasaporte.getMrz());
+            }
+
+            // (Opcional) Si quieres estado y municipio parseados de lugarNacimiento o desde Person
+            // Puedes adaptarlo si tienes esa lógica
 
             log.info("Enviando respuesta: {}", response);
 

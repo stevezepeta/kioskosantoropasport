@@ -1,11 +1,15 @@
 package kioskopasaportes.santoro.repository;
 
-import kioskopasaportes.santoro.model.Pasaporte;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import kioskopasaportes.santoro.model.Pasaporte;
+import kioskopasaportes.santoro.model.Person;
 
 public interface PasaporteRepository extends JpaRepository<Pasaporte, Long> {
 
     Optional<Pasaporte> findByNumeroPasaporte(String numeroPasaporte);
+        Optional<Pasaporte> findByPersona(Person persona);
+
 }

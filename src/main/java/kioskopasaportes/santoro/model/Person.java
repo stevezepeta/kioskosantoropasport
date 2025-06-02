@@ -1,3 +1,4 @@
+
 package kioskopasaportes.santoro.model;
 
 import java.time.LocalDate;
@@ -25,29 +26,34 @@ public class Person {
     @Column(name = "id_person")
     private Long idPerson;
 
-    @Column(length = 225, nullable = false, unique = true)
-    private String curp;
+    @Column(length = 100, nullable = false)
+    private String apellidos;
 
     @Column(length = 100, nullable = false)
     private String nombres;
 
-    @Column(length = 100, nullable = false)
-    private String primerApellido;
+    @Column(length = 1, nullable = false)
+    private String sexo;
 
-    @Column(length = 100)
-    private String segundoApellido;
+    @Column(length = 100, nullable = false)
+    private String nacionalidad;
 
     @Column(nullable = false)
     private LocalDate fechaNacimiento;
 
-    @Column(length = 1, nullable = false)
-    private String sexo;
+    @Column(length = 150)
+    private String lugarNacimiento;
 
-    @Column(length = 100)
-    private String nacionalidad;
+    @Column(length = 225, nullable = true, unique = false)
+    private String curp;
 
-    @Column(length = 255)
-    private String direccion;
+    @Column(length = 500)
+    private String facePhoto; // Base64 o URL
+
+    @Column(length = 500)
+    private String firma; // (opcional, imagen escaneada de la firma)
+
+
 
     @Column(length = 100)
     private String estado;
@@ -55,13 +61,7 @@ public class Person {
     @Column(length = 100)
     private String municipio;
 
-    // === ELIMINADO: Relación con Cita ===
-    // @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    // private List<Cita> citas;
+ 
+}  
 
-    // @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    // private List<Pasaporte> pasaportes;
 
-    @Column(length = 500)
-    private String facePhoto;
-}

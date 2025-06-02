@@ -32,38 +32,45 @@ public class EnrollCustomerService {
     private final ImageService imageService;
 
     @Transactional
-    public Person enrollBiographic(EnrollPersonDTO enrollPersonDTO) {
-        if (enrollPersonDTO.getEstado() == null || enrollPersonDTO.getMunicipio() == null) {
-            throw new IllegalArgumentException("Estado y municipio son requeridos");
-        }
-        String nombreEstado = estadoMunicipioService.getAllEstados().stream()
-                .filter(e -> e.getId().equals(enrollPersonDTO.getEstado()))
-                .findFirst()
-                .map(e -> e.getNombre())
-                .orElseThrow(() -> new IllegalArgumentException("Estado no válido"));
-        String nombreMunicipio = estadoMunicipioService.getMunicipiosPorEstado(enrollPersonDTO.getEstado()).stream()
-                .filter(m -> m.getId().equals(enrollPersonDTO.getMunicipio()))
-                .findFirst()
-                .map(m -> m.getNombre())
-                .orElseThrow(() -> new IllegalArgumentException("Municipio no válido para el estado"));
-        Person person = Person.builder()
-                .curp(enrollPersonDTO.getCurp())
-                .nombres(enrollPersonDTO.getNombres())
-                .primerApellido(enrollPersonDTO.getPrimerApellido())
-                .segundoApellido(enrollPersonDTO.getSegundoApellido())
-                .fechaNacimiento(enrollPersonDTO.getFechaNacimiento())
-                .sexo(enrollPersonDTO.getSexo())
-                .nacionalidad(enrollPersonDTO.getNacionalidad())
-                .direccion(enrollPersonDTO.getDireccion())
-                .estado(nombreEstado)
-                .municipio(nombreMunicipio)
-                .build();
-        Person savedPerson = personRepository.save(person);
-        log.info("Persona enrolada exitosamente con CURP={}, Nombre={} {} Estado={} Municipio={}",
-                savedPerson.getCurp(), savedPerson.getNombres(), savedPerson.getPrimerApellido(),
-                savedPerson.getEstado(), savedPerson.getMunicipio());
-        return savedPerson;
+public Person enrollBiographic(EnrollPersonDTO enrollPersonDTO) {
+    if (enrollPersonDTO.getEstado() == null || enrollPersonDTO.getMunicipio() == null) {
+        throw new IllegalArgumentException("Estado y municipio son requeridos");
     }
+    String nombreEstado = estadoMunicipioService.getAllEstados().stream()
+            .filter(e -> e.getId().equals(enrollPersonDTO.getEstado()))
+            .findFirst()
+            .map(e -> e.getNombre())
+            .orElseThrow(() -> new IllegalArgumentException("Estado no válido"));
+    String nombreMunicipio = estadoMunicipioService.getMunicipiosPorEstado(enrollPersonDTO.getEstado()).stream()
+            .filter(m -> m.getId().equals(enrollPersonDTO.getMunicipio()))
+            .findFirst()
+            .map(m -> m.getNombre())
+            .orElseThrow(() -> new IllegalArgumentException("Municipio no válido para el estado"));
+
+   String lugarNacimiento = nombreMunicipio + ", " + nombreEstado; // <--- Siempre así
+
+Person person = Person.builder()
+    .curp(enrollPersonDTO.getCurp())
+    .nombres(enrollPersonDTO.getNombres())
+    .apellidos(enrollPersonDTO.getApellidos())
+    .fechaNacimiento(enrollPersonDTO.getFechaNacimiento())
+    .sexo(enrollPersonDTO.getSexo())
+    .nacionalidad(enrollPersonDTO.getNacionalidad())
+    .lugarNacimiento(lugarNacimiento) // <--- Ya concatenado, NUNCA lo tomes del DTO
+    .estado(nombreEstado)
+    .municipio(nombreMunicipio)
+    .build();
+
+
+    Person savedPerson = personRepository.save(person);
+    log.info("Persona enrolada exitosamente con CURP={}, Nombre completo={}, Estado={}, Municipio={}",
+            savedPerson.getCurp(),
+            savedPerson.getNombres() + " " + savedPerson.getApellidos(),
+            savedPerson.getEstado(),
+            savedPerson.getMunicipio());
+    return savedPerson;
+}
+
 
     // Biometric enrollment
     @Transactional
@@ -139,8 +146,9 @@ public class EnrollCustomerService {
 
         fingerPrintRepository.save(userFingerPrint);
 
-        log.info("Enrollment fingerprints Registered Successfully of {} {}",
-                person.getNombres(), person.getPrimerApellido());
+     log.info("Enrollment fingerprints Registered Successfully of {}",
+    person.getNombres() + " " + person.getApellidos());
+
     }
 
     /**

@@ -13,7 +13,22 @@ public class EnrollPersonDTO {
     private LocalDate fechaNacimiento;
     private String sexo;
     private String nacionalidad;
-    private String direccion;
-    private Integer estado;    
-    private Integer municipio; 
+    private String lugarNacimiento;    // <--- Agregado para sincronizar con tu modelo
+     private Integer estado;    // <--- Cambia a Integer (ID del estado)
+    private Integer municipio; // <--- Cambia a Integer (ID del municipio)
+    private String direccion;          // (No está en el modelo, pero si la usas en lógica, déjala)
+    
+
+    // Método auxiliar para combinar apellidos
+    public String getApellidos() {
+        StringBuilder sb = new StringBuilder();
+        if (primerApellido != null && !primerApellido.isBlank()) {
+            sb.append(primerApellido);
+        }
+        if (segundoApellido != null && !segundoApellido.isBlank()) {
+            if (sb.length() > 0) sb.append(" ");
+            sb.append(segundoApellido);
+        }
+        return sb.toString().trim();
+    }
 }

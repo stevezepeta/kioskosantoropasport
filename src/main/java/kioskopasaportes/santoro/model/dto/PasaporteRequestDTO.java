@@ -5,18 +5,8 @@ import java.time.LocalDate;
 import lombok.Data;
 
 @Data
-public class FingerprintVerificationResponseDTO {
-    private Long idPerson;
+public class PasaporteRequestDTO {
     private String curp;
-    private String nombres;
-    private String apellidos;
-    private String sexo;
-    private String nacionalidad;
-    private LocalDate fechaNacimiento;
-    private String lugarNacimiento;
-    private String facePhoto;
-
-    // Datos del pasaporte
     private String numeroPasaporte;
     private String tipoDocumento;
     private String codigoPais;

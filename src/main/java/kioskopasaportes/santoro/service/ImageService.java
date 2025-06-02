@@ -53,14 +53,14 @@ public class ImageService {
             throw new IOException("No se ha encontrado la persona con ID: " + idPerson);
         }
 
-        String nombres = person.get().getNombres(); // Adaptado a tu modelo (nombres)
-        String primerApellido = person.get().getPrimerApellido() != null ? person.get().getPrimerApellido() : "";
-        String segundoApellido = person.get().getSegundoApellido() != null ? person.get().getSegundoApellido() : "";
+       String nombres = person.get().getNombres(); // Solo nombres
+String apellidos = person.get().getApellidos(); // Ambos apellidos juntos
 
-        String formattedSurname = "";
-        if (!primerApellido.isEmpty()) {
-            formattedSurname = Character.toUpperCase(primerApellido.charAt(0)) + primerApellido.substring(1);
-        }
+// Capitaliza el primer carácter de los apellidos si no están vacíos
+String formattedSurname = "";
+if (apellidos != null && !apellidos.isBlank()) {
+    formattedSurname = Character.toUpperCase(apellidos.charAt(0)) + apellidos.substring(1);
+}
 
         String personFinder = ((nombres != null ? nombres : "") + formattedSurname + "ID" + idPerson)
                 .replaceAll("\\s+", "");

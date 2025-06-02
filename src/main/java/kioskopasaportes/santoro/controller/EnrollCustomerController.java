@@ -34,17 +34,16 @@ public class EnrollCustomerController {
     private final EnrollCustomerService enrollCustomerService;
 
 
-    @PostMapping(value = "/enroll/biographic")
+   @PostMapping(value = "/enroll/biographic")
 public ResponseEntity<Message> enrollBiographic(@RequestBody @Valid EnrollPersonDTO enrollPersonDTO) {
     Person personSaved = enrollCustomerService.enrollBiographic(enrollPersonDTO);
-    PersonEnrolledDTO personEnrolled = PersonEnrolledDTO.builder()
-            .idPerson(personSaved.getIdPerson())
-            .nombreCompleto(
-                personSaved.getNombres() + " " +
-                personSaved.getPrimerApellido() +
-                (personSaved.getSegundoApellido() != null ? " " + personSaved.getSegundoApellido() : "")
-            )
-            .build();
+   PersonEnrolledDTO personEnrolled = PersonEnrolledDTO.builder()
+    .idPerson(personSaved.getIdPerson())
+    .nombreCompleto(
+        personSaved.getNombres() + " " + personSaved.getApellidos()
+    )
+    .build();
+
     return ResponseEntity.ok(new Message(true, "Datos biográficos enrolados correctamente", personEnrolled));
 }
 
