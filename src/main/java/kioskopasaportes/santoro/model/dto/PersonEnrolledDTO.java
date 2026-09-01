@@ -8,4 +8,8 @@ import lombok.Data;
 public class PersonEnrolledDTO {
     private Long idPerson;
     private String nombreCompleto;
+     public PersonEnrolledDTO(Long idPerson, String nombreCompleto) {
+        this.idPerson = idPerson;
+        this.nombreCompleto = nombreCompleto;
+    }
 }

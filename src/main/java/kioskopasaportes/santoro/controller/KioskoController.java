@@ -2,6 +2,7 @@ package kioskopasaportes.santoro.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Files;
 import java.util.Base64;
 import java.util.Map;
 import java.util.Optional;
@@ -25,6 +26,7 @@ import kioskopasaportes.santoro.repository.PersonRepository;
 import kioskopasaportes.santoro.repository.PasaporteRepository;
 import kioskopasaportes.santoro.service.EstadoMunicipioService;
 import kioskopasaportes.santoro.service.FingerprintService;
+import kioskopasaportes.santoro.service.FaceDetectionService; // <- Agrega esta línea
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,6 +41,7 @@ public class KioskoController {
     private final PasaporteRepository pasaporteRepository;
     private final FingerprintService fingerprintService;
     private final EstadoMunicipioService estadoMunicipioService;
+    private final FaceDetectionService faceDetectionService; // <- Inyección del servicio facial
 
     @PostMapping("/verify")
     public ResponseEntity<FingerprintVerificationResponseDTO> verifyFingerprint(
@@ -62,11 +65,6 @@ public class KioskoController {
 
             // Buscar la huella registrada para la persona
             FingerPrint fingerPrint = fingerPrintRepository.findByPerson(person).orElse(null);
-            if (fingerPrint == null) {
-                log.warn("Huella NO encontrada para persona con CURP: {}", curp);
-                return ResponseEntity.notFound().build();
-            }
-            log.info("Registro de huella encontrado para persona: {}", curp);
 
             // Lista de dedos estándar
             String[] fingerKeys = {
@@ -79,32 +77,88 @@ public class KioskoController {
             String matchedFinger = null;
             FingerprintResultDTO matchResult = null;
 
-            for (String finger : fingerKeys) {
-                MultipartFile file = filesBiometric.get(finger);
-                String savedFingerprintPath = getFingerprintPath(fingerPrint, finger);
-                if (file != null && !file.isEmpty() && savedFingerprintPath != null) {
-                    atLeastOneFingerPresent = true;
+            if (fingerPrint != null) {
+                for (String finger : fingerKeys) {
+                    MultipartFile file = filesBiometric.get(finger);
+                    String savedFingerprintPath = getFingerprintPath(fingerPrint, finger);
+                    if (file != null && !file.isEmpty() && savedFingerprintPath != null) {
+                        atLeastOneFingerPresent = true;
 
-                    String uploadedFingerprintBase64 = Base64.getEncoder().encodeToString(file.getBytes());
+                        String uploadedFingerprintBase64 = Base64.getEncoder().encodeToString(file.getBytes());
 
-                    FingerprintResultDTO result = fingerprintService.compareFingerprints(
-                            uploadedFingerprintBase64, savedFingerprintPath, true
-                    );
+                        FingerprintResultDTO result = fingerprintService.compareFingerprints(
+                                uploadedFingerprintBase64, savedFingerprintPath, true
+                        );
 
-                    log.info("Comparando dedo {}: resultado={}", finger, result);
+                        log.info("Comparando dedo {}: resultado={}", finger, result);
 
-                    if (result != null && result.isMatch()) {
-                        matchFound = true;
-                        matchedFinger = finger;
-                        matchResult = result;
-                        break;
+                        if (result != null && result.isMatch()) {
+                            matchFound = true;
+                            matchedFinger = finger;
+                            matchResult = result;
+                            break;
+                        }
                     }
                 }
             }
 
+            // === Si NO hay huellas, intenta verificación facial ===
             if (!atLeastOneFingerPresent) {
-                log.warn("No se recibió ninguna huella digital para verificar.");
-                return ResponseEntity.badRequest().build();
+                log.warn("No se recibió ninguna huella digital para verificar. Probando facial...");
+                // Si recibes una foto facial y hay una almacenada, haz matching facial
+                if (facePhoto != null && !facePhoto.isEmpty() && person.getFacePhoto() != null && !person.getFacePhoto().isBlank()) {
+                    // Lee la foto facial guardada (ruta de archivo)
+                    byte[] savedFaceBytes = Files.readAllBytes(new File(person.getFacePhoto()).toPath());
+                    boolean faceMatch = faceDetectionService.compareFaces(facePhoto.getBytes(), savedFaceBytes);
+                    if (faceMatch) {
+                        log.info("¡MATCH facial exitoso para CURP: {}!", curp);
+
+                        // Buscar pasaporte asociado a la persona
+                        Pasaporte pasaporte = pasaporteRepository.findByPersona(person).orElse(null);
+
+                        // === Buscar estado como objeto con id y nombre ===
+                        EstadoDTO estadoDTO = null;
+                        if (person.getEstado() != null && !person.getEstado().isBlank()) {
+                            Optional<EstadoMunicipioDTO> estadoOpt = estadoMunicipioService.getEstadoByNombre(person.getEstado());
+                            if (estadoOpt.isPresent()) {
+                                EstadoMunicipioDTO estadoCat = estadoOpt.get();
+                                estadoDTO = new EstadoDTO(estadoCat.getId(), estadoCat.getNombre());
+                            }
+                        }
+
+                        FingerprintVerificationResponseDTO response = new FingerprintVerificationResponseDTO();
+                        response.setIdPerson(person.getIdPerson());
+                        response.setCurp(person.getCurp());
+                        response.setNombres(person.getNombres());
+                        response.setApellidos(person.getApellidos());
+                        response.setFechaNacimiento(person.getFechaNacimiento());
+                        response.setSexo(person.getSexo());
+                        response.setNacionalidad(person.getNacionalidad());
+                        response.setLugarNacimiento(person.getLugarNacimiento());
+                        response.setFacePhoto(person.getFacePhoto());
+                        response.setEstado(estadoDTO);
+
+                        if (pasaporte != null) {
+                            response.setNumeroPasaporte(pasaporte.getNumeroPasaporte());
+                            response.setTipoDocumento(pasaporte.getTipoDocumento());
+                            response.setCodigoPais(pasaporte.getCodigoPais());
+                            response.setLugarEmision(pasaporte.getLugarEmision());
+                            response.setAutoridad(pasaporte.getAutoridad());
+                            response.setFechaEmision(pasaporte.getFechaEmision());
+                            response.setFechaExpiracion(pasaporte.getFechaExpiracion());
+                            response.setMrz(pasaporte.getMrz());
+                        }
+
+                        log.info("Enviando respuesta por MATCH facial: {}", response);
+                        return ResponseEntity.ok(response);
+                    } else {
+                        log.warn("NO hubo match facial para CURP: {}", curp);
+                        return ResponseEntity.noContent().build();
+                    }
+                } else {
+                    log.warn("No se recibió foto facial para comparar, o la persona no tiene foto registrada.");
+                    return ResponseEntity.badRequest().build();
+                }
             }
 
             if (!matchFound) {
@@ -164,9 +218,8 @@ public class KioskoController {
             response.setNacionalidad(person.getNacionalidad());
             response.setLugarNacimiento(person.getLugarNacimiento());
             response.setFacePhoto(facePhotoPath);
-            response.setEstado(estadoDTO); // <<--- Estado como objeto
+            response.setEstado(estadoDTO);
 
-            // Datos del pasaporte (si existe)
             if (pasaporte != null) {
                 response.setNumeroPasaporte(pasaporte.getNumeroPasaporte());
                 response.setTipoDocumento(pasaporte.getTipoDocumento());
@@ -183,7 +236,7 @@ public class KioskoController {
             return ResponseEntity.ok(response);
 
         } catch (Exception ex) {
-            log.error("Error comparando huellas dactilares: ", ex);
+            log.error("Error comparando huellas dactilares/facial: ", ex);
             return ResponseEntity.internalServerError().build();
         }
     }
